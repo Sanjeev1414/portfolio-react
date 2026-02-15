@@ -1,0 +1,367 @@
+/* ================ IT COMPANY SCENE STYLES ================ */
+
+.it-company-scene {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(6, 182, 212, 0.05));
+  border-radius: 15px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  overflow: hidden;
+  margin-bottom: 3rem;
+  perspective: 1000px;
+}
+
+/* ================ SCREEN BOARD ================ */
+
+.screen-board {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 120px;
+  height: 80px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 3px solid #06b6d4;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.4);
+  z-index: 10;
+}
+
+.screen-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+}
+
+.screen-line {
+  height: 8px;
+  background: linear-gradient(90deg, #06b6d4, #6366f1);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+}
+
+.screen-line.short {
+  width: 70%;
+}
+
+/* ================ WORKSPACE TABLE ================ */
+
+.workspace-table {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  height: 200px;
+  z-index: 5;
+}
+
+/* ================ LAPTOPS ================ */
+
+.laptop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  perspective: 1200px;
+}
+
+.laptop-screen {
+  position: relative;
+  width: 80px;
+  height: 50px;
+  background: linear-gradient(145deg, #0f172a, #1a1a2e);
+  border: 2px solid #06b6d4;
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: inset 0 0 15px rgba(6, 182, 212, 0.3), 0 0 20px rgba(6, 182, 212, 0.4);
+  overflow: hidden;
+}
+
+.screen-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(6, 182, 212, 0.2), transparent);
+}
+
+.code-line {
+  height: 3px;
+  background: linear-gradient(90deg, #06b6d4, transparent);
+  border-radius: 1px;
+  margin: 2px 0;
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
+  position: relative;
+  z-index: 1;
+}
+
+.code-line:last-child {
+  width: 70%;
+}
+
+
+
+.laptop-base {
+  width: 95px;
+  height: 8px;
+  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+}
+
+.left-laptop {
+  transform: rotateX(15deg) rotateZ(-5deg);
+}
+
+.right-laptop {
+  transform: rotateX(15deg) rotateZ(5deg);
+}
+
+/* ================ DEVELOPER AVATAR ================ */
+
+.developer-workspace {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  position: relative;
+}
+
+.developer-avatar {
+  width: 50px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.avatar-head {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-head::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+}
+
+.avatar-body {
+  width: 22px;
+  height: 26px;
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
+}
+
+.developer-label {
+  font-size: 0.75rem;
+  color: #06b6d4;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+}
+
+/* ================ TABLE LEGS ================ */
+
+.table-legs {
+  position: absolute;
+  bottom: 20px;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.leg {
+  width: 6px;
+  height: 80px;
+  background: linear-gradient(180deg, #6366f1, #8b5cf6);
+  border-radius: 3px;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+  transform: perspective(800px) rotateX(5deg);
+}
+
+.left-leg {
+  margin-left: 30px;
+}
+
+.right-leg {
+  margin-right: 30px;
+}
+
+/* ================ FLOATING SYMBOLS ================ */
+
+.floating-symbols {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #06b6d4;
+  opacity: 0.3;
+  filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.4));
+}
+
+.floating-symbols:first-of-type {
+  left: 20px;
+  top: 50%;
+}
+
+.floating-symbols.right-symbol {
+  right: 20px;
+  top: 40%;
+}
+
+.symbol {
+  display: inline-block;
+}
+
+/* ================ SCENE GRID ================ */
+
+.scene-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      90deg,
+      rgba(99, 102, 241, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  border-radius: 15px;
+  opacity: 0.3;
+}
+
+/* ================ STATUS INDICATOR ================ */
+
+.status-indicator {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #06b6d4;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #06b6d4;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.8);
+}
+
+
+
+/* ================ RESPONSIVE ================ */
+
+@media (max-width: 768px) {
+  .it-company-scene {
+    height: 250px;
+  }
+
+  .workspace-table {
+    gap: 2rem;
+    height: 150px;
+  }
+
+  .laptop-screen {
+    width: 60px;
+    height: 40px;
+  }
+
+  .laptop-base {
+    width: 75px;
+  }
+
+  .avatar-head {
+    width: 25px;
+    height: 25px;
+  }
+
+  .avatar-body {
+    width: 18px;
+    height: 22px;
+  }
+
+  .screen-board {
+    width: 100px;
+    height: 70px;
+    padding: 8px;
+  }
+
+  .floating-symbols {
+    font-size: 1.5rem;
+    left: 10px !important;
+    right: 10px !important;
+  }
+
+  .table-legs {
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .it-company-scene {
+    height: 200px;
+    margin-bottom: 2rem;
+  }
+
+  .workspace-table {
+    gap: 1.5rem;
+    height: 120px;
+  }
+
+  .laptop-screen {
+    width: 50px;
+    height: 35px;
+    padding: 4px;
+  }
+
+  .laptop-base {
+    width: 60px;
+    height: 6px;
+  }
+
+  .screen-board {
+    width: 80px;
+    height: 60px;
+    padding: 6px;
+    right: 15px;
+    top: 15px;
+  }
+
+  .developer-label {
+    font-size: 0.7rem;
+  }
+
+  .status-indicator {
+    font-size: 0.75rem;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .table-legs {
+    width: 130px;
+    bottom: 15px;
+  }
+}

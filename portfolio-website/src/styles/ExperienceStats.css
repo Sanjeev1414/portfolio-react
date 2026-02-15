@@ -1,0 +1,283 @@
+/* ================ EXPERIENCE STATS PANEL ================ */
+
+.experience-stats-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(99, 102, 241, 0.08));
+  border-radius: 16px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+}
+
+/* ================ STATS GRID ================ */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(99, 102, 241, 0.1));
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.stat-card:hover::before {
+  left: 100%;
+}
+
+.stat-card:hover {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(99, 102, 241, 0.2));
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #a1a5b1;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ================ SKILLS BREAKDOWN ================ */
+
+.skills-breakdown {
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.breakdown-title {
+  color: #a855f7;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skill-item {
+  margin-bottom: 1.3rem;
+}
+
+.skill-item:last-child {
+  margin-bottom: 0;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  color: #e0e7ff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.skill-percentage {
+  color: #a855f7;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.skill-bar-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #a855f7, #6366f1);
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+/* ================ EXPERIENCE SUMMARY ================ */
+
+.experience-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.summary-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(168, 85, 247, 0.05);
+  border-left: 3px solid #a855f7;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.summary-item:hover {
+  background: rgba(168, 85, 247, 0.1);
+  transform: translateX(5px);
+}
+
+.summary-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.summary-item h4 {
+  color: #a855f7;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.summary-item p {
+  color: #a1a5b1;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ================ FLOATING ANIMATION ================ */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ================ RESPONSIVE ================ */
+
+@media (max-width: 1024px) {
+  .experience-stats-panel {
+    position: static;
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-stats-panel {
+    grid-column: 1 / -1;
+    padding: 1.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-icon {
+    font-size: 2rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .breakdown-title {
+    font-size: 0.95rem;
+  }
+
+  .skill-name {
+    font-size: 0.85rem;
+  }
+
+  .summary-item {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-stats-panel {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-icon {
+    font-size: 1.8rem;
+  }
+
+  .stat-value {
+    font-size: 1.3rem;
+  }
+
+  .skill-item {
+    margin-bottom: 1rem;
+  }
+
+  .summary-item {
+    padding: 0.8rem;
+    flex-direction: column;
+  }
+
+  .summary-icon {
+    font-size: 1.5rem;
+  }
+}
